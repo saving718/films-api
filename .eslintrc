@@ -1,0 +1,13 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest"
+    ],
+    "rules": {
+        "react-hooks/exhaustive-deps":"off",
+        "no-console":"warn",
+        "quotes": ["warn", "double"],
+        "semi": ["error", "always"],
+        "indent": ["warn", "tab"]
+    }
+}

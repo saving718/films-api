@@ -1,0 +1,19 @@
+@import '../../mixins/adaptive_mixin.scss';
+
+.l-header {
+    .header {
+        padding: 20px;
+        background-color: #000;
+        &__wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+    }
+    @include for-size(mobile) {
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+    }
+}

@@ -1,0 +1,56 @@
+@import '../../mixins/adaptive_mixin.scss';
+
+.b-menu {
+    position: absolute;
+    top: 10px;
+    left: 180px;
+    .menu {
+        &__item {
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 20px;
+            transition: color 0.5s;
+        }
+        &__item:not(:last-child) {
+            padding-right: 20px;
+        }
+        &__item:hover {
+            color: #f60;
+        }
+    }
+    @include for-size(mobile) {
+        display: none;
+    }
+}
+.b-menu--column {
+    position: static;
+    margin: 0 auto;
+    display: block;
+    .menu {
+        &__wrap {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        &__item:not(:last-child) {
+            padding:0 0 10px;
+        }
+    }
+}
+.b-menu--adaptive {
+    position: absolute;
+    left: calc(50% - 40px);
+    top: 70px;
+    display: block;
+    .menu {
+        &__wrap {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        &__item:not(:last-child) {
+            padding:0 0 10px;
+        }
+    }
+}

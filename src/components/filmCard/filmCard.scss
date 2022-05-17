@@ -1,0 +1,121 @@
+@import '../../mixins/adaptive_mixin.scss';
+
+.b-film-card {
+    width: calc(25% - 10px);
+
+    @media (min-width: 1200px) {
+        &:not(:nth-child(4n)) {
+            margin-right: 10px;
+        }
+    }    
+
+    @include for-size(desktop) {
+        width: calc(33.33% - 10px);
+        &:not(:nth-child(3n)) {
+            margin-right: 10px;
+        }
+    }
+
+    @include for-size(tablet) {
+        width: calc(50% - 10px);
+        &:not(:nth-child(2n)) {
+            margin-right: 10px;
+        }
+    }
+
+    @include for-size(mobile) {
+        width: calc(50% - 5px);
+        &:not(:nth-child(2n)) {
+            margin-right: 10px;
+        }
+    }
+
+    @include for-size(mobile-small) {
+        width: calc(100%);
+        &:not(:nth-child(2n)) {
+            margin-right: 0;
+        }
+    }
+
+    .film-card {
+        margin-bottom: 10px;
+        &__wrap {
+            cursor: pointer;
+            height: 380px;
+            perspective: 1000px;
+            position: relative;
+            @include for-size(mobile) {
+                height: 300px;
+            }
+        }
+        &__front, &__back {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+            transition: 0.8s;
+            border-radius: 6px;
+        }
+        &__front {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__back {
+            background-color: #000;
+            color: #fff;
+            height: calc(100% - 10px);
+            border: 4px solid #f60;
+            transform: rotateY(180deg);
+            width: calc(100% - 48px);
+            padding: 0 20px;
+            text-align: center;
+            cursor: default;
+            user-select: none;
+
+            @include for-size(mobile) {
+                padding: 0 10px;
+                width: calc(100% - 28px);
+            }
+
+            &-title {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            &-description {
+                margin-bottom: 10px;
+                @include for-size(tablet) {
+                    text-align: start;
+                }
+                @include for-size(mobile) {
+                    text-align: start;
+                }
+            }
+            a {
+                color: #f60;
+                &:link {
+                    color: #f60;
+                }
+                &:visited {
+                    color: #f60;
+                }
+            }
+        }
+        &--on {
+            cursor: pointer;
+            .film-card__front {
+                transform: rotateY(180deg);
+            }
+            .film-card__back {
+                transform: rotateY(360deg);
+            }
+        }
+    }
+}

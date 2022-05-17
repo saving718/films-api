@@ -1,0 +1,16 @@
+.b-films {
+  margin-bottom: 70px;
+  text-align: center;
+  h2 {
+    margin-top: 0;
+    line-height: 1;
+  }
+  .films {
+    &__wrap {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      margin: 0 0 20px 0;
+    }
+  }
+}
