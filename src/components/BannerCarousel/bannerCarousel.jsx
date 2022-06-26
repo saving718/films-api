@@ -6,8 +6,8 @@ export default function BannerCarousel() {
 	const films = [1234853, 4467988];
     
 	return (
-		<div className="b-banner">
-			<div className="banner__wrap">
+		<div className="b-films-carousel">
+			<div className="films-carousel__wrap">
 				<Carousel 
 					itemData={films}
 					url="api/v2.2/films"
